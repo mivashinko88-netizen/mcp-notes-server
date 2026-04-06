@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: mcp-notes-server
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn server:app --bind 0.0.0.0:$PORT --timeout 120 --workers 2
